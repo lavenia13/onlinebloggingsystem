@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block pageContent %}
+
+<!-- Section: Content -->
+<section class="text-center">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card card-default rounded-0 shadow">
+                <div class="card-header">
+                    <h4 class="card-title fw-bold"></h4>
+                </div>
+                <div class="card-body">
+                    <center>
+                        <img src="{% if post.banner %}{{ post.banner.url }}{% else %}{{ MEDIA_URL}}/media/default/python-django.png{% endif %}" alt="" class="img-fluid bg-gradient" id="view-post-banner">
+                    </center>
+                    <h4 class="fw-bolder mt-4 text-start">{{ post.title }}</h4>
+                    <hr>
+                    <div class="lh-1 text-start">
+                        <span class="me-5"><small>Author: <b>{{ post.author }}</b></small></span>
+                        <span class="me-5"><small>Category: <b>{{ post.category }}</b></small></span>
+                        <span><small><i class="fa fa-calendar-day"></i> Published: <b>{{ post.date_added|date:"F d, Y h:i A" }}</b></small></span>
+                    </div>
+                    <div class="clear-fix py-3"></div>
+                    <div>{{ post.blog_post|safe }}</div>
+
+                    <!-- Like and Dislike Buttons -->
+                    <div class="mt-4">
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" name="like" class="btn btn-success me-3">
+                                <i class="far fa-thumbs-up"></i> Like
+                            </button>
+                            <button type="submit" name="dislike" class="btn btn-danger">
+                                <i class="far fa-thumbs-down"></i> Dislike
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Card -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8">
+                <div class="card card-default rounded-0 shadow">
+                    <div class="card-header">
+                        <h4 class="card-title fw-bold">Feedback</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Feedback Form -->
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="feedbackTextarea" class="form-label">Leave your feedback below:</label>
+                                <textarea class="form-control" id="feedbackTextarea" name="feedback_text" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock pageContent %}
