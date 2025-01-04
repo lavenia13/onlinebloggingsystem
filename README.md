@@ -16,14 +16,16 @@ Deployment: Done in Pythonanywhere
 
 🚀 How to Run the Project
 Clone the repository:
-git clone https://github.com/yourusername/online-blogging-system.git  
+git clone https://github.com/lavenia13/onlinebloggingsystem.git  
 cd online-blogging-system  
 
 Install dependencies:
+
 pip install -r requirements.txt  
 Configure the database in settings.py 
 
 Run migrations:
+
 python manage.py migrate  
 
 Start the development server:
