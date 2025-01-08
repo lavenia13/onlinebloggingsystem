@@ -23,7 +23,7 @@ Backend: Django ORM
 
 Database: PostgreSQL / SQLite3 
 
-Deployment: Done in Pythonanywhere 
+Deployment: Done in Pythonanywhere (https://lavenia2005.pythonanywhere.com/)
 
 🚀 How to Run the Project
 
