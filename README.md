@@ -9,7 +9,7 @@ User Authentication: Secure login and registration system.
 
 Blog Management: Create, edit, delete, and view blog posts.
 
-Responsive Design: Optimized for both desktop and mobile devices
+Responsive Design: Optimized for both desktop and mobile devices.
 
 Rich Text Editor: Write blogs with formatting options for an enhanced experience.
 
