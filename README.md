@@ -5,7 +5,7 @@ Built using the Django framework, this project combines efficiency, scalability,
 
 🛠️ Key Features
 
-User Authentication: Secure login and registration system.
+User Authentication: Secure login and registration system
 
 Blog Management: Create, edit, delete, and view blog posts.
 
