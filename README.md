@@ -1,7 +1,7 @@
 🌟 Online Blogging System
 
 The Online Blogging System is a Python-based full-stack web application designed to empower users to create, manage, and share blogs effortlessly. 
-Built using the Django framework, this project combines efficiency, scalability, and a user-friendly interface.
+Built using the Django framework, this project combines efficiency, scalability, and a user-friendly interface .
 
 🛠️ Key Features
 
