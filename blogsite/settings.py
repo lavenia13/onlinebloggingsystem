@@ -76,19 +76,27 @@ WSGI_APPLICATION = 'blogsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+import dj_database_url
+import os
+
+
+import os
+import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
+
 '''
 DATABASES={
     'default':{
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Travel',
         'USER':'postgres',
-        'PASSWORD':'sela0713',
+        'PASSWORD':'Aparna@12345',
         'HOST':'localhost',
         'PORT':'5432'
     }
@@ -129,14 +137,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_DIRS = (
-    # location of your application, should not be public web accessible 
-    './static',
-)
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
